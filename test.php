@@ -1,3 +1,12 @@
+<?php
+
+echo '<pre>';
+
+var_dump($GLOBALS, $_SERVER);
+
+echo '</pre>';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +28,9 @@
 
     <h1>Cod'ons Heberg</h1>
 
-    <form enctype="multipart/form-data">
+    <form method="get" enctype="multipart/form-data">
         <input type="file" name="files" id="input-files" webkitdirectory multiple>
-        
-        <button type="button" data-type="submit">Envoyer</button>
+        <input type="submit" value="Envoyer">
         <input type="reset" value="Reset">
     </form>
     
