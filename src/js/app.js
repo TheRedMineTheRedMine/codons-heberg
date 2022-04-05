@@ -8,7 +8,10 @@ window.onload = () => {
     const appNameBtn = document.querySelector('input[name="app-name"]');
     const submitBtn = document.querySelector('button[data-type="submit"]');
 
-    inputBtn.addEventListener('change', e => files = e.target.files);
+    inputBtn.addEventListener('change', e => {
+        files = e.target.files;
+        appNameBtn.style.backgroundColor = "#0f08";
+    });
     submitBtn.addEventListener('click', uploadFile);
 
     async function uploadFile () {
