@@ -20,7 +20,15 @@
     <h1 style="font-family: sans-serif;">Cod'ons Heberg</h1>
 
     <form enctype="multipart/form-data">
-        <input type="file" name="files" id="input-files" value="" webkitdirectory multiple>
+        <input type="text" name="app-name" id="app-name" placeholder="Nom du site" required>
+
+        <label for="input-files">
+            <button type="button" onclick="this.parentElement.click()">
+                Importer un dossier
+            </button>
+        </label>
+
+        <input type="file" name="files" id="input-files" hidden webkitdirectory multiple>
         
         <br><br>
         
