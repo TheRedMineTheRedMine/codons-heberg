@@ -1,26 +1,157 @@
+html, body { overflow: hidden; }
+
 main {
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 200px);
+}
+
+.circle,
+.circle::after,
+.circle::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    z-index: 2;
+}
+
+/* circle on the top */
+main .circle {
+    width: 50%;
+    background: var(--white);
+    transform: scale(1.6, 1);
 }
 
 main .content {
-    width: 100%;
-    height: 75%;
-    overflow: hidden;
-    background: var(--black);
-}
-
-main .content .background {
+    position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background: var(--white);
+}
+
+/* background */
+main .content .background {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
     object-fit: cover;
     transform: scale(1, 1.2);
-    opacity: 75%;
+    filter: opacity(50%) brightness(1.2) contrast(1.2) grayscale(.9) sepia(60%);
+    pointer-events: none;
 }
+
+/* container */
+main .content .text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+main .content .text-container .text {
+    width: 80%;
+    height: 60%;
+    z-index: 3;
+    background: #fffd;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #9997,
+    10px 10px 10px #ddd4,
+    inset 10px 10px 20px var(--white);
+}
+
+/* title */
+main .content .text-container .text .title {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    color: var(--primary-color);
+    padding: 10px 0;
+}
+
+main .content .text-container .text .title h1 {
+    width: fit-content;
+    font-family: 'Poppins-Regular';
+    font-weight: 500;
+    font-size: 2.5rem;
+    font-style: oblique;
+    font-synthesis: style;
+    cursor: pointer;
+}
+
+main .content .text-container .text .title h1::after {
+    content: '';
+    display: block;
+    cursor: pointer;
+    position: relative;
+    top: -5px;
+    left: 2.5px;
+    width: 32px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
+    transition: all .6s ease;
+}
+
+main .content .text-container .text .title h1:hover::after {
+    width: 100%;
+}
+
+main .content .text-container .text .title h1 a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+main .content .text-container .text .title h1 span {
+    font-size: 3rem;
+    font-family: 'Poppins-Bold', 'SourceSansPro-Bold', sans-serif;
+    font-synthesis: style;
+    font-style: normal;
+    cursor: pointer;
+}
+
+/* form */
+/*  */
+
+/* circle on the bottom */
+main .content .circle {
+    background: var(--white);
+    width: 200px;
+    height: 200px;
+    transform: none;
+    transform: scale(1.75, 1.4);
+}
+
+/* main .content .circle::before {
+    background: #00f1;
+    width: 200px;
+    height: 200px;
+    transform: scale(95%);
+} */
 
 @media (max-width: 600px) {
     main .content .background {
         transform: scale(1);
+    }
+
+    main .content .text-container .text .title h1 {
+        font-size: 1.8rem;
+    }
+
+    main .content .text-container .text .title h1::after {
+        width: 26px;
+    }
+
+    main .content .text-container .text .title h1 span {
+        font-size: 2.5rem;
     }
 }

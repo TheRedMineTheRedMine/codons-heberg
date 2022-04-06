@@ -20,10 +20,60 @@
 <body>
 
     <main role="main">
+        <span class="circle"></span>
+        
         <div class="content">
             <img src="../assets/images/server.jpeg" alt="Background" class="background">
+            
+            <div class="text-container">
+                <div class="text">
+                    <div class="title">
+                        <h1><span>C</span>od'ons Heberg</h1>
+                    </div>
+
+                    <form method="get" enctype="text/plain">
+                        <div class="input-box">
+                            <label for="username">
+                                Nom d'utilisateur
+                            </label>
+
+                            <input type="text" name="username" id="username" placeholder="Nom d'utilisateur ou email">
+                        </div>
+
+                        <div class="input-box">
+                            <label for="password">
+                                Mot de passe
+                            </label>
+
+                            <input type="password" name="password" id="password" placeholder="Mot de passe">
+                            
+                        </div>
+
+                        <div class="input-box submit">
+                            <button type="submit">
+                                Se connecter
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <span class="circle"></span>
         </div>
     </main>
+
+
+    <script type="text/javascript">
+        const decorationCircle1 = document.querySelector('span.circle');
+        const decorationCircle2 = document.querySelector('.content span.circle');
+        
+        decorationCircle1.style.height = `${decorationCircle1.clientWidth}px`;
+        decorationCircle1.style.top = `-${decorationCircle1.clientWidth / 1.5}px`;
+        decorationCircle1.style.left = `-${decorationCircle1.clientWidth / 2}px`;
+
+        decorationCircle2.style.top = `calc(${decorationCircle2.parentElement.clientHeight}px - ${decorationCircle2.clientHeight / 2}px - 1px)`;
+        decorationCircle2.style.left = `calc(${decorationCircle2.parentElement.clientWidth}px - ${decorationCircle2.clientWidth / 2}px)`;
+    </script>
     
 </body>
 </html>
