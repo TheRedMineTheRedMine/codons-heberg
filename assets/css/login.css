@@ -1,8 +1,15 @@
 html, body { overflow: hidden; }
 
+header, footer {
+    display: block;
+    height: 100px;
+}
+
 main {
+    position: relative;
     width: 100%;
     height: calc(100vh - 200px);
+    overflow: hidden;
 }
 
 .circle,
@@ -59,12 +66,13 @@ main .content .text-container {
 main .content .text-container .text {
     width: 80%;
     height: 60%;
+    max-width: 800px;
     z-index: 3;
-    background: #fffd;
+    background: #dddd;
     border-radius: 10px;
     box-shadow: 5px 5px 10px #9997,
-    10px 10px 10px #ddd4,
-    inset 10px 10px 20px var(--white);
+                10px 10px 10px #ddd4,
+                inset 10px 10px 20px var(--white);
 }
 
 /* title */
@@ -102,7 +110,7 @@ main .content .text-container .text .title h1::after {
 }
 
 main .content .text-container .text .title h1:hover::after {
-    width: 100%;
+    width: calc(50% + 5px);
 }
 
 main .content .text-container .text .title h1 a {
@@ -120,7 +128,125 @@ main .content .text-container .text .title h1 span {
 }
 
 /* form */
-/*  */
+main .content .text-container form {
+    font-family: 'SourceSansPro-Regular';
+    width: 100%;
+    height: calc(100% - 1.4rem - 49px);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main .content .text-container form .sub-title {
+    font-size: 1.5rem;
+    font-family: 'Poppins-SemiBold';
+}
+
+main .content .text-container form .form-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    height: 80%;
+    width: 100%;
+    max-width: 250px;
+}
+
+main .content .text-container form .form-content .input-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 35px;
+    background: var(--white);
+    position: relative;
+    border-radius: 20px;
+}
+
+main .content .text-container form .form-content .input-box input {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1rem;
+    font-family: 'SourceSansPro-Regular';
+    padding: 6px 14px;
+    color: var(--black-3);
+}
+
+main .content .text-container form .form-content .input-box input::placeholder {
+    color: transparent;
+    font-family: 'SourceSansPro-Light';
+    transition: all .4s;
+}
+
+main .content .text-container form .form-content .input-box input:focus::placeholder {
+    color: var(--grey-5);
+}
+
+main .content .text-container form .form-content .input-box label {
+    position: absolute;
+    padding: 6px 14px;
+    transition: all .4s ease;
+    cursor: text;
+}
+
+main .content .text-container form .form-content .input-box input:not(:focus) ~ label {
+    animation: input-animate .4s ease reverse;
+    top: 0;
+    font-size: 1rem;
+}
+
+main .content .text-container form .form-content .input-box input:focus ~ label,
+main .content .text-container form .form-content .input-box input:valid ~ label {
+    animation: input-animate .4s ease;
+    top: -15px;
+    font-size: 14px;
+}
+
+main .content .text-container form .form-content .input-box.submit {
+    width: fit-content;
+    margin-left: calc(50% - 55px);
+    background: #0af;
+    cursor: pointer;
+    opacity: 1;
+    transition: all .4s ease;
+}
+
+main .content .text-container form .form-content .input-box.submit button {
+    border: none;
+    background: none;
+    width: 100%;
+    height: 100%;
+    color: var(--white);
+    font-family: 'Poppins-SemiBold';
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+main .content .text-container form .form-content .input-box.submit:hover,
+main .content .text-container form .form-content .input-box.submit:focus {
+    opacity: 70%;
+}
+
+main .content .text-container form .form-content .options a {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+main .content .text-container form .form-content .options a::after {
+    content: '';
+    display: block;
+    position: relative;
+    left: 147px;
+    width: 0;
+    height: .5px;
+    background: var(--primary-color);
+    transition: all .4s ease;
+}
+
+main .content .text-container form .form-content .options a:hover::after {
+    width: 60px;
+}
 
 /* circle on the bottom */
 main .content .circle {
@@ -137,6 +263,18 @@ main .content .circle {
     height: 200px;
     transform: scale(95%);
 } */
+
+@keyframes input-animate {
+    from {
+        top: 0;
+        font-size: 1rem;
+    }
+    
+    to {
+        top: -15px;
+        font-size: 14px;
+    }
+}
 
 @media (max-width: 600px) {
     main .content .background {

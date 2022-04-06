@@ -43,6 +43,10 @@ b i {
     font-family: 'SourceSansPro-BoldItalic';
 }
 
+a, button, input, textarea {
+    outline: none;
+}
+
 :root {
     /* important colors */
     --primary-color: #25d;
