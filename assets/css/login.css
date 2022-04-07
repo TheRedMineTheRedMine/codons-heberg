@@ -155,6 +155,7 @@ main .content .text-container form .form-content {
     max-width: 250px;
 }
 
+/* input */
 main .content .text-container form .form-content .input-box {
     display: flex;
     flex-direction: column;
@@ -205,6 +206,7 @@ main .content .text-container form .form-content .input-box input:valid ~ label 
     font-size: 14px;
 }
 
+/* submit button */
 main .content .text-container form .form-content .input-box.submit {
     width: fit-content;
     margin-left: calc(50% - 55px);
@@ -230,6 +232,7 @@ main .content .text-container form .form-content .input-box.submit:focus {
     opacity: 70%;
 }
 
+/* form options */
 main .content .text-container form .form-content .options a {
     color: var(--primary-color);
     text-decoration: none;
@@ -247,9 +250,9 @@ main .content .text-container form .form-content .options a::after {
     transition: all .4s ease;
 }
 
-main .content .text-container form .form-content .options a:hover::after {
-    width: 60px;
-}
+main .content .text-container form .form-content .options a:hover::after {width: 60px}
+main .content .text-container form#register .form-content .options a::after {left: 137px}
+main .content .text-container form#register .form-content .options a:hover::after {width: 86px}
 
 /* circle on the bottom */
 main .content .circle {
