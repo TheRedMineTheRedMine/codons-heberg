@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <title>Log in</title>
+    <title>Register</title>
     
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -30,22 +30,30 @@
             <img src="../assets/images/server.jpeg" alt="Background" class="background">
             
             <div class="text-container">
-                <div class="text">
+                <div class="text" style="min-height: 400px;">
                     <div class="title">
                         <h1><span>C</span>od'ons Heberg</h1>
                     </div>
 
-                    <form method="get" enctype="text/plain" id="login">
+                    <form method="get" enctype="text/plain" id="register">
                         <div class="sub-title">
-                            Se connecter
+                            S'inscrire
                         </div>
 
                         <div class="form-content">
                             <div class="input-box">
-                                <input type="text" name="username" id="username" placeholder="Nom d'utilisateur ou email" required>
+                                <input type="text" name="username" id="username" placeholder="Ex: John Doe" required>
                                 
                                 <label for="username">
                                     Nom d'utilisateur
+                                </label>
+                            </div>
+
+                            <div class="input-box">
+                                <input type="text" name="username" id="email" placeholder="Ex: johndoe@example.org" required>
+                                
+                                <label for="email">
+                                    Adresse mail
                                 </label>
                             </div>
     
@@ -56,16 +64,24 @@
                                     Mot de passe
                                 </label>                                
                             </div>
+
+                            <div class="input-box">
+                                <input type="password" name="confirm-password" id="confirm-password" placeholder="Mot de passe" required>
+                                
+                                <label for="confirm-password">
+                                    Confirmation du mot de passe
+                                </label>                                
+                            </div>
     
                             <div class="input-box submit">
                                 <button type="submit">
-                                    Se connecter
+                                    S'inscrire
                                 </button>
                             </div>
     
                             <div class="options">
-                                Je n'ai pas de compte
-                                <a href="./register.html">s'inscrire</a>
+                                J'ai déjà un compte,
+                                <a href="./login.html">se connecter</a>
                             </div>
                         </div>
                     </form>

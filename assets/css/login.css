@@ -3,6 +3,7 @@ html, body { overflow: hidden; }
 header, footer {
     display: block;
     height: 100px;
+    background: none;
 }
 
 main {
@@ -25,6 +26,7 @@ main {
 /* circle on the top */
 main .circle {
     width: 50%;
+    max-width: 600px;
     background: var(--white);
     transform: scale(1.6, 1);
 }
@@ -70,7 +72,7 @@ main .content .text-container .text {
     z-index: 3;
     background: #dddd;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #9997,
+    box-shadow: 5px 5px 10px #9996,
                 10px 10px 10px #ddd4,
                 inset 10px 10px 20px var(--white);
 }
@@ -129,6 +131,7 @@ main .content .text-container .text .title h1 span {
 
 /* form */
 main .content .text-container form {
+    background: transparent;
     font-family: 'SourceSansPro-Regular';
     width: 100%;
     height: calc(100% - 1.4rem - 49px);
