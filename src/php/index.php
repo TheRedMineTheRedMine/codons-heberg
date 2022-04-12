@@ -31,7 +31,8 @@ foreach ($_FILES as $key => $file) {
                 if (isset($_POST['appName']) && !empty($_POST['appName'])) {
                     $path = '../../' . urlencode($_POST['appName']);
                     
-                    if (!is_dir($path)) mkdir($path);
+                    if (is_dir($path)) echo json_encode($path);
+                    else mkdir($path);
                 }
             } catch (ErrorException $e) {
                 echo json_encode('An error as occured :' . $e);
