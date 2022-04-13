@@ -1,5 +1,5 @@
 const alertFunction = window.alert;
-window.alert = function () {};
+delete window.alert;
 
 window.onload = () => {
     let files, result;
